@@ -92,6 +92,11 @@ if __name__ == '__main__':
       help='Saves the filtered points to disk if a format is provided. Must be one of [%(choices)s]. Defaults to %(default)s',
   )
   parser.add_argument(
+      '--log_screenshots',
+      default=None,
+      help='Path where screenshots are saved at each update. Default is off.'
+  )
+  parser.add_argument(
     '--whitelist',
     type=int,
     default=None,
@@ -247,6 +252,7 @@ if __name__ == '__main__':
                      color_map = CFG["color_map"],
                      background_color = FLAGS.background_color,
                      border_color = FLAGS.background_color,
+                     screenshot_path = FLAGS.log_screenshots,
   )
 
   # print instructions

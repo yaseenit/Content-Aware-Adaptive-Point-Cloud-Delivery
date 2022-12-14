@@ -13,6 +13,7 @@ import os
 import open3d as o3d
 from plyfile import PlyData, PlyElement
 from typing import List, Tuple, Dict
+#from vispy.gloo.util import _screenshot
 
 class LaserScanVis:
   """Class that creates and handles a visualizer for a pointcloud"""
@@ -33,6 +34,7 @@ class LaserScanVis:
     color_map: Dict[int, List[int]] = {},
     background_color = 'black',
     border_color = 'black',
+    screenshot_path = None,
   ):
     self.scan = scan
     self.scan_names = scan_names
@@ -53,6 +55,7 @@ class LaserScanVis:
     self.color_map = color_map
     self.background_color = background_color
     self.border_color = border_color
+    self.screenshot_path = screenshot_path
 
     strides: List[int] = [int(stride) for paths, label, stride in self.additional_sequences]
 
@@ -338,6 +341,8 @@ class LaserScanVis:
                             face_color=colors,
                             edge_color=colors,
                             size=1)
+      image = self.additional_sequences_view.canvas.render(region=None)
+      vispy.io.write_png(f"{self.screenshot_path}\\{self.offset:06}.png", image)
 
     # plot instances
     if self.instances:
