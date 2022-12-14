@@ -4,6 +4,11 @@
 
 Point clouds are an important enabler for a wide range of applications in various domains, including autonomous vehicles and virtual reality applications. Hence, the practical applicability of point clouds is gaining increasing importance and presenting new challenges for communication systems where large amounts of data need to be shared with low latency. Point cloud content can be very large, especially when multiple objects are involved in the scene. Major challenges of point clouds delivery are related to streaming in bandwidth-constrained networks and to resource-constrained devices. In this work, we are exploiting object-related knowledge, i.e., content-driven metrics, to improve the adaptability and efficiency of point clouds transmission. This study proposes applying a 3D point cloud semantic segmentation deep neural network and using object-related knowledge to assess the importance of each object in the scene. Using this information, we can semantically adapt the bit rate and utilize the available bandwidth more efficiently. The experimental results conducted on a real-world dataset showed that we can significantly reduce the requirement for multiple object point cloud transmission with limited quality degradation compared to the baseline without modifications.
 
+## Preview
+|Before|After|
+|-|-|
+|![Before](before.gif)|![After](after.gif)|
+
 ## Quick Start Guide
 
 Detailed descriptions for setup and usage can be found in the individual projects README files. Here is the quick start version:
